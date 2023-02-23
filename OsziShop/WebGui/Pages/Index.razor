@@ -1,0 +1,106 @@
+﻿@page "/"
+@using Domain.Repositories.Interfaces
+@using Model.Entities
+@using System.Reflection.Metadata
+@using System.Linq.Expressions
+@using WebGui.Areas.Identity.Controller
+@inject IRepository<Article> ArticleRepository
+
+@inject CartState CartState
+@implements IDisposable
+
+<PageTitle>OsziShop</PageTitle>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+    </head>
+    <body class="bg-dark">
+        <!-- Navigation-->
+        <div class="container">
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><image href="img/osziVect.svg"></image></svg>
+                </a>
+
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="/" class="nav-link px-2 link-light">Home</a></li>
+                    <li><a href="#" class="nav-link px-2 link-light">Daily Specials</a></li>
+                    <li><a href="#" class="nav-link px-2 link-light">Why us?</a></li>
+                    <li><a href="#" class="nav-link px-2 link-light">Shipping</a></li>
+                    <li><a href="#" class="nav-link px-2 link-light">Payment</a></li>
+                    <li><a href="/Cart" class="nav-link px-2 link-light">Cart (@Cart.Count)</a></li>
+                </ul>
+
+                <div class="col-md-3 text-end">
+                    <AuthorizeView>
+                        <Authorized>
+                            <a href="Identity/Account/Manage" class="text-light me-2 text-decoration-none btn-secondary">
+                                @context.User.Identity?.Name
+                            </a>
+                            <a class="btn btn-primary" href="Identity/Account/LogOut">Log out</a>
+                        </Authorized>
+                        <NotAuthorized>
+                            <a class="btn btn-outline-primary me-2" href="Identity/Account/Register">Register</a>
+                            <a class="btn btn-primary" href="Identity/Account/Login">Log in</a>
+                        </NotAuthorized>
+                    </AuthorizeView>
+                </div>
+            </header>
+        </div>
+        <!-- Header-->
+        <header class="bg-info py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder text-black">Oszi Shop</h1>
+                    <p class="lead fw-normal mb-0 text-black-50">Dein Online Hagenaumarkt für Elektronik und Schalter</p>
+                </div>
+            </div>
+        </header>
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                            @foreach (var item in articleSortiment)
+                            {
+                                var temp = new Dictionary<string, object>();
+                                temp.Add("Article", "");
+                                temp["Article"] = item;
+                                <DynamicComponent Type="@componentType" Parameters="@temp"/>
+                            }
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy; Oszi Shop 2023</p>
+                <p class="m-0 text-center text-white">Jakob Pusch & Fritz Valentin</p>
+            </div>
+        </footer>
+    </body>
+</html>
+
+@code
+{
+    private Type componentType = typeof(ArticleComponent);
+
+    public static List<Article> Cart { get; set; } = new List<Article>();
+
+    public List<Article> articleSortiment;
+
+    protected override async Task OnInitializedAsync()
+    {
+        CartState.OnChange += StateHasChanged;
+        articleSortiment = await ArticleRepository.ReadAllAsync();
+    }
+
+    public void Dispose()
+    {
+        CartState.OnChange -= StateHasChanged;
+    }
+}

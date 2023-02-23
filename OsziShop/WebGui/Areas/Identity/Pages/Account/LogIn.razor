@@ -1,0 +1,74 @@
+@page "/Identity/Account/Login"
+@using Microsoft.AspNetCore.Identity
+@using Model.Entities
+@using Microsoft.AspNetCore.Components
+@using WebGui.Areas.Identity.Controller
+
+@inject SignInManager<Account> SignInManager
+@inject UserManager<Account> UserManager
+@inject NavigationManager NavigationManager
+
+<div class="container bg-dark">
+    <h3 class="text-light">Login</h3>
+    <br/>
+    <EditForm Model=@Info OnValidSubmit=@LoginUser>
+        <div class="form-group">
+            <label for="UserName" class="text-light">UserName</label>
+            <InputText @bind-Value=Info.UserName class="form-control" id="UserName"/>
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="Password" class="text-light">Password</label>
+            <InputText @bind-Value=Info.Password class="form-control" id="Password"/>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Save"/>
+    </EditForm>
+    <br/>
+    <div>
+        <div class="text-light">@SignInResult</div>
+    </div>
+</div>
+
+
+
+@code {
+
+    public LoginInfo Info = new LoginInfo();
+    
+    public string SignInResult { get; set; }
+    
+    public async Task LoginUser(EditContext editContext)
+    {
+        var user = await UserManager.FindByNameAsync(Info.UserName);
+        if (user == null)
+        {
+            SignInResult = "User not found";
+            return;
+        }
+
+
+        if (await SignInManager.CanSignInAsync(user))
+        {
+            var result = await SignInManager.CheckPasswordSignInAsync(user, Info.Password, false);
+            if (result == Microsoft.AspNetCore.Identity.SignInResult.Success)
+            {
+                var token = AccountController.GenerateToken(user.UserName);
+                NavigationManager.NavigateTo($"/Identity/AccountController/Login?token={token}", true);
+            }
+            else
+            {
+                SignInResult = "Login failed. Check your password.";
+            }
+        }
+        else
+        {
+            SignInResult = "Your account is blocked";
+        }  
+    }
+
+    public class LoginInfo 
+    {
+        public string UserName;
+        public string Password;
+    }
+}

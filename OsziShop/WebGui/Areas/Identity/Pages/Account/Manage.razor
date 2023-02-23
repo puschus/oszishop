@@ -1,0 +1,18 @@
+﻿@page "/Identity/Account/Manage"
+@using WebGui.Pages
+<AuthorizeView>
+    <Authorized>
+        <div class="container text-center bg-dark">
+            <h3 class="display-5 text-light">
+                Greetings, @context.User.Identity?.Name!
+            </h3>
+            <AdminPanel/>
+        </div>
+        
+    </Authorized>
+    <NotAuthorized>
+        <div class="container text-center">
+            <h3 class="display-5">Not Authorized!</h3>
+        </div>
+    </NotAuthorized>
+</AuthorizeView>

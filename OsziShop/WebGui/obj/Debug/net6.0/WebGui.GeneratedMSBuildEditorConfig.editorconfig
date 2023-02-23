@@ -1,0 +1,108 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WebGui
+build_property.RootNamespace = WebGui
+build_property.ProjectDir = C:\Users\jakob\Documents\ITPL\OsziShop\WebGui\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\jakob\Documents\ITPL\OsziShop\WebGui
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Areas/Identity/Pages/Account/LogIn.razor]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dJbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Areas/Identity/Pages/Account/LogOut.razor]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dPdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Areas/Identity/Pages/Account/Manage.razor]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Areas/Identity/Pages/Account/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Pages/AdminPanel.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Pages/AdminPanels/AddressComp.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbHNcQWRkcmVzc0NvbXAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Pages/AdminPanels/AdminHome.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbHNcQWRtaW5Ib21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Pages/AdminPanels/ArticleComp.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbHNcQXJ0aWNsZUNvbXAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Pages/AdminPanels/CategoryComp.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbHNcQ2F0ZWdvcnlDb21wLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Pages/AdminPanels/OrdersComp.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbHNcT3JkZXJzQ29tcC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Pages/AdminPanels/UserComp.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5QYW5lbHNcVXNlckNvbXAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Pages/ArticleComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXJ0aWNsZUNvbXBvbmVudC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Pages/CartArticleComp.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2FydEFydGljbGVDb21wLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Pages/SalesComponent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2FsZXNDb21wb25lbnQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Pages/ShoppingCart.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hvcHBpbmdDYXJ0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Shared/LoginDisplay.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXExvZ2luRGlzcGxheS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-dvzigj5z0s
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/jakob/Documents/ITPL/OsziShop/WebGui/Pages/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

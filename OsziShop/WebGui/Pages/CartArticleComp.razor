@@ -1,0 +1,33 @@
+﻿@using Model.Entities
+@using WebGui.Areas.Identity.Controller
+@inject CartState CartState
+<tr class="text-light">
+    <td data-th="Product">
+        <div class="row">
+            <div class="col-md-3 text-left">
+                <img src="img/oszidev.jpg" alt="" class="img-fluid d-none d-md-block rounded mb-2 shadow ">
+            </div>
+            <div class="col-md-9 text-left mt-sm-2">
+                <h4>Product Name</h4>
+                <p class="font-weight-light">@Article.Designation</p>
+            </div>
+        </div>
+    </td>
+    <td data-th="Price" >@Article.Price €</td>
+    <td>
+        <div class="btn btn-danger" onclick="@Remove">
+            Remove
+        </div>
+    </td>
+</tr>
+
+@code {
+    [Parameter]
+    public Article Article { get; set; }
+
+    public void Remove()
+    {
+        Index.Cart.Remove(Article);
+        CartState.NotifyStateChanged();
+    }
+}

@@ -1,0 +1,65 @@
+@page "/Identity/Account/Register"
+@using Microsoft.AspNetCore.Identity
+@using Model.Entities
+@inject UserManager<Account> UserManager
+@inject NavigationManager NavigationManager
+
+<div class="container">
+    <h3 class="text-light">Register</h3>
+    
+    <EditForm Model=@User  OnValidSubmit=@RegisterUser>
+        <div class="form-group">
+            <label for="UserName" class="text-light">UserName</label>
+            <InputText @bind-Value=User.UserName class="form-control" id="UserName" />
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="Password" class="text-light">Password</label>
+            <InputText @bind-Value=User.Password class="form-control" id="Password" />
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="FirstName" class="text-light">FirstName</label>
+            <InputText @bind-Value=User.FirstName class="form-control" id="FirstName" />
+        </div>
+        <br/>
+        <div class="form-group">
+            <label for="LastName" class="text-light">LastName</label>
+            <InputText @bind-Value=User.LastName class="form-control" id="LastName" />
+        </div>
+        <br/>
+        <input type="submit" class="btn btn-primary" value="Save"/>
+        <br/>
+        <br/>
+        <a class="text-light">@Error</a>
+    </EditForm>
+</div>
+
+
+
+@code {
+
+    private readonly RegisterInfo User = new RegisterInfo();
+    public string Error { get; set; } = "";
+    public async Task RegisterUser(EditContext editContext)
+    {
+
+        var result = await UserManager.CreateAsync(User, User.Password);
+
+        if (result.Succeeded)
+        {
+            NavigationManager.NavigateTo("/");
+        }
+        else
+        {
+            Error = result.ToString();
+        }
+    }
+
+    
+    
+    public class RegisterInfo : Account
+    {
+        public string? Password;
+    }
+}
